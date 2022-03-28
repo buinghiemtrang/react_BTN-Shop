@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+html {
+    font-size: 13px;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+     
+    &::-webkit-scrollbar-track {
+        background-color: #ebebeb;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: #8f8f8f; 
+    }
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+a:hover {
+    color: $main-color;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+}
+
+@each $color, $val in $colors {
+    .color-#{$color} {
+        color: $val;
+    }
+
+    .bg-#{$color} {
+        background-color: $val;
+    }
+}
+
+@each $val in $numbers {
+    .grid-col-#{$val} {
+        grid-template-columns: repeat($val, 1fr);
+    }
+}
+
+@each $val in $numbers {
+    .grid-col-md-#{$val} {
+        @include tablet {
+            grid-template-columns: repeat($val, 1fr);
+        }
+    }
+}
+
+@each $val in $numbers {
+    .grid-col-sm-#{$val} {
+        @include mobile {
+            grid-template-columns: repeat($val, 1fr);
+        }
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1620px;
+    padding: 0 80px;
+    margin: 0;
+
+    @include tablet {
+        padding: 0 20px;
+    }
+
+    @include mobile {
+        padding: 0 10px;
+    }
+}
+
+.main {
+    margin-top: 110px;
+    margin-bottom: 2rem;
+    min-height: 100vh;
+    
+
+    @include tablet {
+        margin-top: calc(#{$header-tablet-height} + 20px);
+    }
+
+    @include mobile {
+        margin-top: calc(#{$header-mobile-height} + 10px);
+    }
+}
+
+.grid {
+    display: grid;
+}

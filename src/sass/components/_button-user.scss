@@ -1,0 +1,32 @@
+.btn-user {
+    background-color: $main-color;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border: 0;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: padding 0.25s linear;
+    text-align: center;
+    position: relative;
+
+    &:hover {
+        padding-right: 5rem;
+    }
+
+    i {
+        font-size: 20px;
+        transition: 0.25s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
+    }
+
+    &:hover i {
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+}
